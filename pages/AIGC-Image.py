@@ -1,6 +1,6 @@
 import streamlit as st
-import os
-import openai
+# import os
+# import openai
 import torch
 import numpy as np
 
@@ -21,7 +21,7 @@ col1, col2 = st.columns(2,gap = "medium")
 with col1:
     st.markdown('#### Original Shirt')
     st.image(
-    "src/data.jpeg",
+    "src/test1.jpg.jpeg",
     caption='Dalle Shirt',
      use_column_width  = 'always',
     )
@@ -29,7 +29,7 @@ with col2:
 #     function_selection = st.selectbox('Select the function here:',
 #                         [ 'Q1','Q2','Q3']
 #                         )
-    form = st.form(key='Q1-form')
+#     form = st.form(key='Q1-form')
     prompt = form.text_input('year',
                                     min_value=1900,
                                     max_value=2100,
