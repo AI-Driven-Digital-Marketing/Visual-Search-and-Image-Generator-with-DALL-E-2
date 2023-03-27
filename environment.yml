@@ -1,0 +1,15 @@
+name: TorchEnv
+channels:
+  - pytorch
+dependencies:
+  - numpy
+  - pandas
+  - pillow
+  - boto3
+  - transformers
+  - pytorch
+  - torchvision
+  - cpuonly 
+  - pip:
+    - matplotlib
+    
