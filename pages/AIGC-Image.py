@@ -30,15 +30,15 @@ with col2:
                         [ 'Q1','Q2','Q3']
                         )
     st.markdown('#### Features')
-        if function_selection == 'Q1':
-            '''Find customers who have returned items more than 20% more often than the average customer returns for a
-            store in a given state for a given year.'''
-            form = st.form(key='Q1-form')
-            prompt = form.text_input('year',
-                                            min_value=1900,
-                                            max_value=2100,
-                                            value  = 2000,
-                                            help = 'Input value not in range.(Range: 1900~2100)')
-            submit = form.form_submit_button('Submit')  
-        else:
-            pass
+    if function_selection == 'Q1':
+        '''Find customers who have returned items more than 20% more often than the average customer returns for a
+        store in a given state for a given year.'''
+        form = st.form(key='Q1-form')
+        prompt = form.text_input('year',
+                                        min_value=1900,
+                                        max_value=2100,
+                                        value  = 2000,
+                                        help = 'Input value not in range.(Range: 1900~2100)')
+        submit = form.form_submit_button('Submit')  
+    else:
+        pass
