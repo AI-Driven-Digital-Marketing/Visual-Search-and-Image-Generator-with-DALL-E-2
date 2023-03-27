@@ -20,7 +20,7 @@ with col1:
     )
 with col2:
     form = st.form(key='my_form')
-    form.text_input(label='Enter some text')
+    form.text_input(label='Customerize your creative!')
     submit_button = form.form_submit_button(label='Submit')
 
     
