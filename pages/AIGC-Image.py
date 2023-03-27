@@ -14,9 +14,9 @@ st.image(
 )
 
 # input GUI for user
-# _,col1,_ = st.columns([1,8,1])
-# _,col2,_ = st.columns([1,8,1])
-# col1, col2 = st.columns(2,gap = "medium")
+_,col1,_ = st.columns([1,8,1])
+_,col2,_ = st.columns([1,8,1])
+col1, col2 = st.columns(2,gap = "medium")
 
 with col1:
     st.markdown('#### Original Shirt')
