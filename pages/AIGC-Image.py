@@ -1,7 +1,6 @@
 import streamlit as st
 import os
-import openai
-import torch
+# import openai
 import numpy as np
 
 
