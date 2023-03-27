@@ -14,7 +14,7 @@ col1, col2 = st.columns(2,gap = "medium")
 with col1:
     st.markdown('#### Original Shirt')
     st.image(
-    "src/test1.jpg.jpeg",
+    "src/test1.jpg",
     caption='Dalle Shirt',
      use_column_width  = 'always',
     )
