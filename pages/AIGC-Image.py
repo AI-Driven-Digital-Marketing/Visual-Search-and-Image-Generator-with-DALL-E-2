@@ -23,51 +23,26 @@ with col2:
     form.text_input(label='Customerize your creative!')
     submit_button = form.form_submit_button(label='Submit')
 
-if color == 'White':
-    st.write('You selected White.')
-    st.image(
-    "src/white.png",
-    caption='Dalle Shirt',
-    width= 500,
-    )
-elif color == 'Black':
-    st.write('You selected Black.')
-    st.image(
-    "src/black.png",
-    caption='Dalle Shirt',
-    width= 500,
-    )
-elif color == 'Gary':
-    st.write('You selected Gary.')
-    st.image(
-    "src/gary.png",
-    caption='Dalle Shirt',
-    width= 500,
-    )
-else:
-    st.write("You need select your creative background.")    
-    
-
 if color == 'White' and submit_button:
     st.write('You selected White.')
     st.image(
     "src/white.png",
     caption='Dalle Shirt',
-    width= 100,
+    width= 500,
     )
 elif color == 'Black' and submit_button:
     st.write('You selected Black.')
     st.image(
     "src/black.png",
     caption='Dalle Shirt',
-    width= 100,
+    width= 500,
     )
 elif color == 'Gary' and submit_button:
     st.write('You selected Gary.')
     st.image(
     "src/gary.png",
     caption='Dalle Shirt',
-    width= 100,
+    width= 500,
     )
 else:
     st.write("You need select your creative background.")
