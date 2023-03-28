@@ -30,6 +30,7 @@ if color == 'White':
     "src/white.png",
     caption='Dalle Shirt',
     width= 500,
+    use_column_width=True,
     )
 elif color == 'Black':
     st.write('You selected Black.')
@@ -37,6 +38,7 @@ elif color == 'Black':
     "src/black.png",
     caption='Dalle Shirt',
     width= 500,
+    use_column_width=True,
     )
 elif color == 'Gary':
     st.write('You selected Gary.')
@@ -44,6 +46,7 @@ elif color == 'Gary':
     "src/gary.png",
     caption='Dalle Shirt',
     width= 500,
+    use_column_width=True,
     )
 else:
     st.write("You need select your creative background.")    
