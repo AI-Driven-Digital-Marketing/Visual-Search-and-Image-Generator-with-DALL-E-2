@@ -53,21 +53,21 @@ if color == 'White' and submit_button:
     st.image(
     "src/white.png",
     caption='Dalle Shirt',
-    width= 500,
+    width= 100,
     )
 elif color == 'Black' and submit_button:
     st.write('You selected Black.')
     st.image(
     "src/black.png",
     caption='Dalle Shirt',
-    width= 300,
+    width= 100,
     )
 elif color == 'Gary' and submit_button:
     st.write('You selected Gary.')
     st.image(
     "src/gary.png",
     caption='Dalle Shirt',
-    width= 300,
+    width= 100,
     )
 else:
     st.write("You need select your creative background.")
