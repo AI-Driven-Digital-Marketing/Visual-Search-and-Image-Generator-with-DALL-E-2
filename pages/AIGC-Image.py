@@ -12,44 +12,41 @@ _,col2,_ = st.columns([1,8,1])
 col1, col2 = st.columns(2,gap = "medium")
 
 with col1:
-    st.markdown('#### Original Shirt')
+    st.markdown('#### Original Creative')
     
     color = st.radio(
     "Select your shirt color:",
     ('White', 'Black', 'Gary'))
-
-    if color == 'White':
-        st.write('You selected White.')
-        st.image(
-        "src/white.png",
-        caption='Dalle Shirt',
-        use_column_width  = 'always',
-        )
-    elif color == 'Black':
-        st.write('You selected Black.')
-        st.image(
-        "src/black.png",
-        caption='Dalle Shirt',
-        use_column_width  = 'always',
-        )
-    elif color == 'Gary':
-        st.write('You selected Gary.')
-        st.image(
-        "src/gary.png",
-        caption='Dalle Shirt',
-        use_column_width  = 'always',
-        )
-    else:
-        st.write("You need select your creative background.")
-
-
 
 with col2:
     form = st.form(key='my_form')
     form.text_input(label='Customerize your creative!')
     submit_button = form.form_submit_button(label='Submit')
 
-    
+
+if color == 'White':
+    st.write('You selected White.')
+    st.image(
+    "src/white.png",
+    caption='Dalle Shirt',
+    use_column_width  = 'always',
+    )
+elif color == 'Black':
+    st.write('You selected Black.')
+    st.image(
+    "src/black.png",
+    caption='Dalle Shirt',
+    use_column_width  = 'always',
+    )
+elif color == 'Gary':
+    st.write('You selected Gary.')
+    st.image(
+    "src/gary.png",
+    caption='Dalle Shirt',
+    use_column_width  = 'always',
+    )
+else:
+    st.write("You need select your creative background.")    
     
 #     st.markdown('#### Features')
 #     if function_selection == 'Q1':
