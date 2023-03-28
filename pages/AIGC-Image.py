@@ -29,7 +29,7 @@ if color == 'White':
     st.image(
     "src/white.png",
     caption='Dalle Shirt',
-    width= 500,
+    width= 300,
     use_column_width=True,
     )
 elif color == 'Black':
@@ -37,7 +37,7 @@ elif color == 'Black':
     st.image(
     "src/black.png",
     caption='Dalle Shirt',
-    width= 500,
+    width= 300,
     use_column_width=True,
     )
 elif color == 'Gary':
@@ -45,7 +45,7 @@ elif color == 'Gary':
     st.image(
     "src/gary.png",
     caption='Dalle Shirt',
-    width= 500,
+    width= 300,
     use_column_width=True,
     )
 else:
