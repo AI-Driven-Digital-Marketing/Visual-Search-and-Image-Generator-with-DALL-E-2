@@ -29,24 +29,21 @@ if color == 'White':
     st.image(
     "src/white.png",
     caption='Dalle Shirt',
-    width= 300,
-    use_column_width=False,
+    width= 500,
     )
 elif color == 'Black':
     st.write('You selected Black.')
     st.image(
     "src/black.png",
     caption='Dalle Shirt',
-    width= 300,
-    use_column_width=False,
+    width= 500,
     )
 elif color == 'Gary':
     st.write('You selected Gary.')
     st.image(
     "src/gary.png",
     caption='Dalle Shirt',
-    width= 300,
-    use_column_width=False,
+    width= 500,
     )
 else:
     st.write("You need select your creative background.")    
