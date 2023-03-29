@@ -8,7 +8,7 @@ from io import BytesIO
 
 # OpenAI API
 openai.organization = "org-hZCjhqvXmAGGiwqIXIzozujs"
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 # Tittl 
@@ -59,8 +59,11 @@ else:
 response = openai.Image.create_edit(
   image=open("src/white.png", "rb"),
   mask=open("src/whitemask.png", "rb"),
-  prompt="A husky",
+  prompt="A brutalism building by the sea.",
   n=1,
   size="1024x1024"
 )
 image_url = response['data'][0]['url']
+response = requests.get(image_url)
+img = Image.open(BytesIO(response.content))
+img
