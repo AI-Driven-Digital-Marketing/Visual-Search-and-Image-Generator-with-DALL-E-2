@@ -38,7 +38,6 @@ width= 500,
 )
 
 if  submit_button:
-    st.write('You selected White.')
     response = openai.Image.create_edit(
     image=open(color_dict[color], "rb"),
     mask=open(mask_dict[color], "rb"),
@@ -49,7 +48,8 @@ if  submit_button:
     image_url = response['data'][0]['url']
     response = requests.get(image_url)
     img = Image.open(BytesIO(response.content))
-    img
+    st.image(img, caption='Your Creative', width= 500)
+   
 
 
 # Report body
