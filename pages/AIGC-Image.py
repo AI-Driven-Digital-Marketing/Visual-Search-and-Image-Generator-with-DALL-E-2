@@ -6,8 +6,13 @@ from PIL import Image
 import requests
 from io import BytesIO
 
-st.write('## AIGC Image')
+# OpenAI API
+openai.organization = "org-hZCjhqvXmAGGiwqIXIzozujs"
+openai.api_key = "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"
 
+
+# Tittl 
+st.write('## AIGC Image')
 # input GUI for user
 _,col1,_ = st.columns([1,6,1])
 _,col2,_ = st.columns([1,6,1])
@@ -27,11 +32,25 @@ with col2:
 
 if color == 'White' and submit_button:
     st.write('You selected White.')
-    st.image(
-    "src/white.png",
-    caption='Dalle Shirt',
-    width= 500,
+    # st.image(
+    # "src/white.png",
+    # caption='Dalle Shirt',
+    # width= 500,
+    # )
+    response = openai.Image.create_edit(
+    image=open("src/white.png", "rb"),
+    mask=open("src/whitemask.png", "rb"),
+    prompt="A husky",
+    n=1,
+    size="1024x1024"
     )
+    image_url = response['data'][0]['url']
+    response = requests.get(image_url)
+    img = Image.open(BytesIO(response.content))
+    img
+
+
+
 elif color == 'Black' and submit_button:
     st.write('You selected Black.')
     st.image(
@@ -49,18 +68,5 @@ elif color == 'Gary' and submit_button:
 else:
     st.write("You need select your creative background.")    
 
-# OpenAI API
-openai.organization = "org-hZCjhqvXmAGGiwqIXIzozujs"
-openai.api_key = "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"
+
 # Report body
-response = openai.Image.create_edit(
-  image=open("src/white.png", "rb"),
-  mask=open("src/whitemask.png", "rb"),
-  prompt="A husky",
-  n=1,
-  size="1024x1024"
-)
-image_url = response['data'][0]['url']
-response = requests.get(image_url)
-img = Image.open(BytesIO(response.content))
-img
