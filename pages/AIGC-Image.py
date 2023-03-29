@@ -32,25 +32,11 @@ with col2:
 
 if color == 'White' and submit_button:
     st.write('You selected White.')
-    # st.image(
-    # "src/white.png",
-    # caption='Dalle Shirt',
-    # width= 500,
-    # )
-    response = openai.Image.create_edit(
-    image=open("src/white.png", "rb"),
-    mask=open("src/whitemask.png", "rb"),
-    prompt="A husky",
-    n=1,
-    size="1024x1024"
+    st.image(
+    "src/white.png",
+    caption='Dalle Shirt',
+    width= 500,
     )
-    image_url = response['data'][0]['url']
-    response = requests.get(image_url)
-    img = Image.open(BytesIO(response.content))
-    img
-
-
-
 elif color == 'Black' and submit_button:
     st.write('You selected Black.')
     st.image(
@@ -70,3 +56,11 @@ else:
 
 
 # Report body
+response = openai.Image.create_edit(
+  image=open("src/white.png", "rb"),
+  mask=open("src/whitemask.png", "rb"),
+  prompt="A husky",
+  n=1,
+  size="1024x1024"
+)
+image_url = response['data'][0]['url']
