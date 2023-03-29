@@ -31,11 +31,7 @@ with col2:
 
 color_dict = {'White': 'src/white.png', 'Black': 'src/black.png', 'Gary': 'src/gary.png'}
 mask_dict = {'White': 'src/whitemask.png', 'Black': 'src/blackmask.png', 'Gary': 'src/garymask.png'}
-st.image(
-color_dict[color],
-caption='Dalle Shirt',
-width= 500,
-)
+
 
 if  submit_button:
     response = openai.Image.create_edit(
@@ -49,7 +45,11 @@ if  submit_button:
     response = requests.get(image_url)
     img = Image.open(BytesIO(response.content))
     st.image(img, caption='Your Creative', width= 500)
-   
+else:
+    st.image(color_dict[color],
+    caption='Dalle Shirt',
+    width= 500,
+    )
 
 
 # Report body
