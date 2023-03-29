@@ -2,7 +2,9 @@ import streamlit as st
 import os
 import openai
 import numpy as np
-
+from PIL import Image
+import requests
+from io import BytesIO
 
 st.write('## AIGC Image')
 
@@ -45,5 +47,20 @@ elif color == 'Gary' and submit_button:
     width= 500,
     )
 else:
-    st.write("You need select your creative background.")
+    st.write("You need select your creative background.")    
 
+# OpenAI API
+openai.organization = "org-hZCjhqvXmAGGiwqIXIzozujs"
+openai.api_key = "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"
+# Report body
+response = openai.Image.create_edit(
+  image=open("src/white.png", "rb"),
+  mask=open("src/whitemask.png", "rb"),
+  prompt="A husky",
+  n=1,
+  size="1024x1024"
+)
+image_url = response['data'][0]['url']
+response = requests.get(image_url)
+img = Image.open(BytesIO(response.content))
+img
