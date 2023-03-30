@@ -84,13 +84,13 @@ with col2:
         image = Image.open(image_input) 
         topk_indices, topk_values = CLIP_search(image, topK)
         search_outputs = [selected_files[x] for x in topk_indices]
-        st.write(search_outputs) # not show image right now
+        #st.write(search_outputs) # not show image right now
         output_images = read_s3(search_outputs)
         n = 5
         img = 0
         cols = st.columns(n)
         while img <len(output_images):
             with cols[img%n]:
-                st.image(output_images[img],caption = f'Similarity : {topk_values[img]}')
+                st.image(output_images[img],caption = f'Similarity : {topk_values[img]:.2%}')
             img += 1
         
