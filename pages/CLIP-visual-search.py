@@ -68,17 +68,16 @@ model, processor = initialize()
 # GUI
 _,col1,_ = st.columns([1,8,1])
 _,col2,_ = st.columns([1,8,1])
-with col1:    
-    form = st.form(key='image-form')
+with col1: 
     upload_method = st.radio("Select a way", ("From examples", "From local"))
+    form = st.form(key='image-form')
     if upload_method == "From examples":
         image_input = form.selectbox('Select the image here:',
                                 ['src/test1.jpg', 'src/test2.jpg', 'src/test3.jpg']
                                )
-        image = Image.open(image_input) 
     else:
-        image = form.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
-        
+        image_input = form.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+
     topK = form.number_input('result number',
                                 min_value=0,
                                 max_value=20,
@@ -86,8 +85,9 @@ with col1:
                                 help = 'Number of images in searching results')
     submit = form.form_submit_button('Submit')
 with col2:
-    #image = Image.open(image_input) 
-    st.image(image, caption='Uploaded image', use_column_width=True)
+    if image_input:
+        image = Image.open(image_input) 
+        st.image(image, width=400, caption='Uploaded image', use_column_width=False,position="centered")    
     if submit:
         topk_indices, topk_values = CLIP_search(image, topK)
         search_outputs = [selected_files[x] for x in topk_indices]
