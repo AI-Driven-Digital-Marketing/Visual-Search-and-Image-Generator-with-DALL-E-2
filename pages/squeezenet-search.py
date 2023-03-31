@@ -102,7 +102,7 @@ with col1:
         for i in response['matches']:
             top_similar_imageId.append(i['id'].split('.')[1])
             
-    with open('path_store.json', 'r') as f:
+    with open('src/path_store.json', 'r') as f:
         path_store = json.load(f)
 
     search_outputs = [path_store[x] for x in top_similar_imageId]
