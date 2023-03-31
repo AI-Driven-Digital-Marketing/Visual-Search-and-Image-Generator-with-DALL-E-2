@@ -61,15 +61,20 @@ with col1:
                                 help = 'Number of images in searching results')
     submit = form.form_submit_button('Submit')
     
-    #Pinepone response & process
-    model = torchvision.models.squeezenet1_1(pretrained=True).eval()
-    query_embedding = model(preprocess(image).unsqueeze(0)).tolist()
-    # response = index.query(query_embedding, top_k=4, include_metadata=True)
-    response = index.query(query_embedding, top_k=4, include_metadata=True)
+    if image_input:
+        image = Image.open(image_input) 
+        st.image(image, width=400, caption='Uploaded image', use_column_width=False,position="centered")    
     
-    #Process the image id and connecting to S3
-    top_similar_imageId = []
-    for i in response['matches']:
-        top_similar_imageId.append(i['id'].split('.')[1])
-    print(top_similar_imageId)
-    
+    if submit:   
+        #Pinepone response & process
+        model = torchvision.models.squeezenet1_1(pretrained=True).eval()
+        query_embedding = model(preprocess(image).unsqueeze(0)).tolist()
+        # response = index.query(query_embedding, top_k=4, include_metadata=True)
+        response = index.query(query_embedding, top_k=4, include_metadata=True)
+
+        #Process the image id and connecting to S3
+        top_similar_imageId = []
+        for i in response['matches']:
+            top_similar_imageId.append(i['id'].split('.')[1])
+        print(top_similar_imageId)
+
