@@ -3,6 +3,7 @@ import torch
 import numpy as np
 from PIL import Image
 import pinecone
+import torchvision
 from torchvision.transforms import (
     Compose, 
     Resize, 
