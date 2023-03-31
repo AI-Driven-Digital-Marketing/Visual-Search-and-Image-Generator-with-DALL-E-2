@@ -1,7 +1,7 @@
 import streamlit as st
 import torch
 import numpy as np
-from PIL i
+from PIL import Image
 
 #Environment set up
 pinekey = st.secrets['pinekey']
