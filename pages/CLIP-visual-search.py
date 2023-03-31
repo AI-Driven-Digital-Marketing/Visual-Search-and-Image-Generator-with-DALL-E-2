@@ -87,7 +87,8 @@ with col1:
     submit = form.form_submit_button('Submit')
 with col2:
     #image = Image.open(image_input) 
-    st.image(image, caption='Uploaded image', use_column_width=True)
+    if image :
+        st.image(image, caption='Uploaded image', use_column_width=True)
     if submit:
         topk_indices, topk_values = CLIP_search(image, topK)
         search_outputs = [selected_files[x] for x in topk_indices]
