@@ -1,15 +1,26 @@
-# import streamlit as st
-# import torch
-# import numpy as np
+import streamlit as st
+import torch
+import numpy as np
+from PIT import im
 st.write('## squeezenet Visual Search')
 st.write('# Upload Image')
 
-uploaded_file = st.file_uploader("Choose an image file", type=['jpg', 'png', 'jpeg'])
+_,col1,_ = st.columns([1,8,1])
 
-if uploaded_file is not None:
-    # Load the uploaded image
-    image = Image.open(uploaded_file)
-
-    # Display the image
-    st.image(image, caption='Uploaded Image', use_column_width=True)
+with col1:    
+    form = st.form(key='image-form')
+    upload_method = st.radio("Select a way", ("From examples", "From local"))
+    if upload_method == "From examples":
+        image_input = form.selectbox('Select the image here:',
+                                ['src/test1.jpg', 'src/test2.jpg', 'src/test3.jpg']
+                               )
+        image = Image.open(image_input) 
+    else:
+        image = form.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+        
+    topK = form.number_input('result number',
+                                min_value=0,
+                                max_value=20,
+                             value =10,
+                                help = 'Number of images in searching results')
     
