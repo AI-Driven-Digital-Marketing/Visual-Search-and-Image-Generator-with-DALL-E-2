@@ -61,6 +61,7 @@ with col1:
     submit = form.form_submit_button('Submit')
     
     #Pinepone response & process
+    model = torchvision.models.squeezenet1_1(pretrained=True).eval()
     query_embedding = model(preprocess(image).unsqueeze(0)).tolist()
     # response = index.query(query_embedding, top_k=4, include_metadata=True)
     response = index.query(query_embedding, top_k=4, include_metadata=True)
