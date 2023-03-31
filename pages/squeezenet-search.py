@@ -75,5 +75,6 @@ with col1:
         top_similar_imageId = []
         for i in response['matches']:
             top_similar_imageId.append(i['id'].split('.')[1])
-        print(top_similar_imageId)
+            
+        st.write(top_similar_imageId)
 
