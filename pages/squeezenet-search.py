@@ -50,6 +50,6 @@ if uploaded_file is not None:
     #Process the image id and connecting to S3
     top_similar_imageId = []
     for i in response['matches']:
-    top_similar_imageId.append(i['id'].split('.')[1])
+        top_similar_imageId.append(i['id'].split('.')[1])
     print(top_similar_imageId)
     
