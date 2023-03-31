@@ -85,8 +85,9 @@ with col1:
                                 help = 'Number of images in searching results')
     submit = form.form_submit_button('Submit')
 with col2:
-    image = Image.open(image_input) 
-    st.image(image, caption='Uploaded image')    
+    if image_input:
+        image = Image.open(image_input) 
+        st.image(image, caption='Uploaded image')    
     if submit:
         topk_indices, topk_values = CLIP_search(image, topK)
         search_outputs = [selected_files[x] for x in topk_indices]
