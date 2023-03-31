@@ -60,12 +60,11 @@ with col1:
                              value =10,
                                 help = 'Number of images in searching results')
     submit = form.form_submit_button('Submit')
-    
+
     if image_input:
         image = Image.open(image_input) 
-        st.image(image, width=400, caption='Uploaded image', use_column_width=False,position="centered")    
-    
-    if submit:   
+        st.image(image, width=400, caption='Uploaded image', use_column_width=False)   
+    if submit:
         #Pinepone response & process
         model = torchvision.models.squeezenet1_1(pretrained=True).eval()
         query_embedding = model(preprocess(image).unsqueeze(0)).tolist()
