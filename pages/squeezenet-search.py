@@ -26,7 +26,7 @@ import boto3
 import io
 from concurrent.futures import ThreadPoolExecutor
 from transformers import CLIPProcessor, CLIPVisionModel
-
+import time
 
 #Environment set up
 @st.cache_resource
@@ -106,6 +106,7 @@ with col1:
         image = Image.open(image_input) 
         st.image(image, width=400, caption='Uploaded image', use_column_width=False)   
     if submit:
+        start_time = time.perf_counter()
         #Pinepone response & process
         model = torchvision.models.squeezenet1_1(pretrained=True).eval()
         query_embedding = model(preprocess(image).unsqueeze(0)).tolist()
@@ -130,3 +131,5 @@ with col1:
             with cols[img%n]:
                 st.image(output_images[img])
             img += 1
+        end_time = time.perf_counter()
+        st.write('time consuming:', end_time - start_time)
