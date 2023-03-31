@@ -23,4 +23,4 @@ with col1:
                                 max_value=20,
                              value =10,
                                 help = 'Number of images in searching results')
-    
+    submit = form.form_submit_button('Submit')
