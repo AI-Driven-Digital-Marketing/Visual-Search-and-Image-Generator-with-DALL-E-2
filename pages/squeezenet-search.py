@@ -102,16 +102,16 @@ with col1:
         for i in response['matches']:
             top_similar_imageId.append(i['id'].split('.')[1])
             
-    with open('src/path_store.json', 'r') as f:
-        path_store = json.load(f)
+        with open('src/path_store.json', 'r') as f:
+            path_store = json.load(f)
 
-    search_outputs = [path_store[x] for x in top_similar_imageId]
-    #st.write(search_outputs) # not show image right now
-    output_images = read_s3(search_outputs)
-    n = 5
-    img = 0
-    cols = st.columns(n)
-    while img <len(output_images):
-        with cols[img%n]:
-            st.image(output_images[img])
-        img += 1
+        search_outputs = [path_store[x] for x in top_similar_imageId]
+        #st.write(search_outputs) # not show image right now
+        output_images = read_s3(search_outputs)
+        n = 5
+        img = 0
+        cols = st.columns(n)
+        while img <len(output_images):
+            with cols[img%n]:
+                st.image(output_images[img])
+            img += 1
