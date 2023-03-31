@@ -12,6 +12,5 @@ dependencies:
   - cpuonly 
   - pip:
     - matplotlib
-    - openai
-
+    - pinecone-client
     
