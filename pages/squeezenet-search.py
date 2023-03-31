@@ -1,7 +1,6 @@
-import streamlit as st
-import torch
-import numpy as np
-from PIL import Image
+# import streamlit as st
+# import torch
+# import numpy as np
 st.write('## squeezenet Visual Search')
 st.write('# Upload Image')
 
@@ -13,3 +12,4 @@ if uploaded_file is not None:
 
     # Display the image
     st.image(image, caption='Uploaded Image', use_column_width=True)
+    
