@@ -87,7 +87,7 @@ with col1:
 with col2:
     if image_input:
         image = Image.open(image_input) 
-        st.image(image, width=400, caption='Uploaded image', use_column_width=False,position="centered")    
+        st.image(image, width=400, caption='Uploaded image', use_column_width=False)    
     if submit:
         topk_indices, topk_values = CLIP_search(image, topK)
         search_outputs = [selected_files[x] for x in topk_indices]
