@@ -1,6 +1,7 @@
 import streamlit as st
 import torch
 import numpy as np
+from PIL import Image
 st.write('## squeezenet Visual Search')
 st.write('# Upload Image')
 
