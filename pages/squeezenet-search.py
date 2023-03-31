@@ -82,7 +82,7 @@ index = pinecone.Index(INDEX_NAME)
 
 
 #Upload image
-uploaded_file = st.file_uploader("Choose an image file", type=['jpg', 'png', 'jpeg'])
+# uploaded_file = st.file_uploader("Choose an image file", type=['jpg', 'png', 'jpeg'])
 
 _,col1,_ = st.columns([1,8,1])
 with col1: 
