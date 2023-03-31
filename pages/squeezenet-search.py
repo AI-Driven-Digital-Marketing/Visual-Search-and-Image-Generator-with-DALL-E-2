@@ -111,7 +111,7 @@ with col1:
         model = torchvision.models.squeezenet1_1(pretrained=True).eval()
         query_embedding = model(preprocess(image).unsqueeze(0)).tolist()
         # response = index.query(query_embedding, top_k=4, include_metadata=True)
-        response = index.query(query_embedding, top_k=4, include_metadata=True)
+        response = index.query(query_embedding, top_k=10, include_metadata=True)
 
         #Process the image id and connecting to S3
         top_similar_imageId = []
