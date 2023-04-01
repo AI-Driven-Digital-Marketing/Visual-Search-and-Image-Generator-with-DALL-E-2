@@ -47,7 +47,7 @@ if  submit_button:
     st.image(img, caption='Your Creative', width= 500)
 else:
     st.image(color_dict[color],
-    caption='Your Own Dalle Shirt',
+    caption='Yours Dalle Shirt',
     width= 500,
     )
 
