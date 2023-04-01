@@ -13,10 +13,11 @@
 One may find themselves with an image, looking for similar images among a large image corpus. The difficult part of this requirement is instantly retrieving, at scale, similar images, especially when there are tens of millions or billions of images from which to choose.
 
 In this repo, we will walk you through the mechanics of how to solve this problem using an off-the-shelf, pretrained, neural network to generate data structures known as vector embeddings. We will compare the solutions of :
-- Using [SqueezeNet](https://arxiv.org/abs/1602.07360) to embedding images and use Pinecone's vector database offering to find images with similar vector embeddings to an query image from AWS S3.
-- Using [CLIP](https://openai.com/research/clip) to embedding images and use cosine similarity to find most similar images and load images from AWS S3.
+- Using [SqueezeNet](https://arxiv.org/abs/1602.07360) to embed images and using Pinecone's vector database offering to find images with similar vector embeddings to a query image from AWS S3.
+- Using [CLIP](https://openai.com/research/clip) to embed images and use cosine similarity to find most similar images and load images from AWS S3.
 
-The results shows although CLIP is a much larger and updated model(2021), the SqueezeNet(2016) shows excellent performance in finding similar images and much more faster in calculate embeddings.
+
+The results shows although CLIP is a much larger and updated model(2021), the SqueezeNet(2016) shows excellent performance in finding similar images and much faster in calculating embeddings.
 
 ## Dataset
 The dataset we are using is [DeepFashion2](https://github.com/switchablenorms/DeepFashion2), which is a comprehensive fashion dataset. It contains 491K diverse images of 13 popular clothing categories from both commercial shopping stores and consumers. It totally has 801K clothing clothing items, where each item in an image is labeled with scale, occlusion, zoom-in, viewpoint, category, style, bounding box, dense landmarks and per-pixel mask.There are also 873K Commercial-Consumer clothes pairs.
