@@ -16,9 +16,10 @@ with st.expander("About this app"):
     st.write(" ")
     st.markdown(
         """
-Why Dalle2?:
+### Why Dalle2?:
 1.DALLE2 is a powerful language model that can generate high-quality text and image content based on textual input
 The model is based on the GPT-3 architecture and has been trained on a large corpus of text and image data.
+
 2.The primary usage of DALLE2 is in generating coherent and visually plausible images based on natural language prompts.
 This can be useful in a variety of applications, such as generating images for creative projects, designing products and marketing materials, 
 and creating custom avatars and other graphical assets for online content.
