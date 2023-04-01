@@ -13,6 +13,7 @@ openai.api_key = st.secrets["openaikey"]
 # Tittl 
 st.write('## AIGC Image')
 with st.expander("About this app"):
+    st.write(" ")
     st.markdown(
         """
 Why Dalle2?:
