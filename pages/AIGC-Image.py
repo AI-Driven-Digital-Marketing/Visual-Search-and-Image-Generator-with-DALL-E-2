@@ -26,7 +26,7 @@ with col1:
 
 with col2:
     form = st.form(key='my_form')
-    input_prompt = form.text_input(label='Customerize your creative!')
+    input_prompt = form.text_input(label='Let\'s Customerize your creative!')
     submit_button = form.form_submit_button(label='Submit')
 
 color_dict = {'White': 'src/white.png', 'Black': 'src/black.png', 'Gary': 'src/gary.png'}
@@ -47,7 +47,7 @@ if  submit_button:
     st.image(img, caption='Your Creative', width= 500)
 else:
     st.image(color_dict[color],
-    caption='Dalle Shirt',
+    caption='Your Own Dalle Shirt',
     width= 500,
     )
 
