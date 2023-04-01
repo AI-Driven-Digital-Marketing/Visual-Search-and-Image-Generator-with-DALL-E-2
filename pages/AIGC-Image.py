@@ -25,8 +25,11 @@ This can be useful in a variety of applications, such as generating images for c
 and creating custom avatars and other graphical assets for online content.
 
 3.In this task, we use the Edit API of Dalle2:
+
 Input1: original image(PNG, <4MB)
+
 Input2: Mask image (PNG, <4MB)
+
 Input3: Prompt(User type in front-end)
     """
     )
