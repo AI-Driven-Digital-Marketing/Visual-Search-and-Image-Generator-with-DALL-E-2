@@ -13,4 +13,6 @@ dependencies:
   - pip:
     - matplotlib
     - pinecone-client
+    - openai
+
     

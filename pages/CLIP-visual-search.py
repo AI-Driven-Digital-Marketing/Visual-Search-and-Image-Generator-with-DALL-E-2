@@ -12,6 +12,7 @@ import boto3
 import io
 from concurrent.futures import ThreadPoolExecutor
 from transformers import CLIPProcessor, CLIPVisionModel
+import time
 
 st.write('## CLIP Visual Search')
 device = 'cpu'
@@ -89,6 +90,7 @@ with col2:
         image = Image.open(image_input) 
         st.image(image, width=400, caption='Uploaded image', use_column_width=False)    
     if submit:
+        start_time = time.perf_counter()
         topk_indices, topk_values = CLIP_search(image, topK)
         search_outputs = [selected_files[x] for x in topk_indices]
         #st.write(search_outputs) # not show image right now
@@ -100,4 +102,5 @@ with col2:
             with cols[img%n]:
                 st.image(output_images[img],caption = f'Similarity : {topk_values[img]:.2%}')
             img += 1
-        
+        end_time = time.perf_counter()
+        st.write('time consuming:', end_time - start_time)
