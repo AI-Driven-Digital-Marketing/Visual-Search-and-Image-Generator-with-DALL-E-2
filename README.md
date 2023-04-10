@@ -11,6 +11,7 @@
 - Python
 - Streamlit
 - Pinecone
+- AWS S3
 - [SqueezeNet](https://arxiv.org/abs/1602.07360)
 - [CLIP - OpenAI](https://openai.com/research/clip)
 - [DALL·E 2 - OpenAI](https://openai.com/product/dall-e-2)
