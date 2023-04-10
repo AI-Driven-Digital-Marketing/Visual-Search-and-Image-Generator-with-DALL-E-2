@@ -7,7 +7,13 @@
 | **--->** [1.Streamlit App](https://dduan-zw-visual-search-welcome-fztyvt.streamlit.app/) |
 
 | **--->** [2.Codelab](https://docs.google.com/document/d/1p8RdCUnfBQIfVtpQ8gmEty_1RgeEwW62a6ZI0g2rdaI/edit#heading=h.knzgz5vyduac) |
-
+### Tech Stacks
+- Python
+- Streamlit
+- Pinecone
+- [SqueezeNet](https://arxiv.org/abs/1602.07360)
+- [CLIP - OpenAI](https://openai.com/research/clip)
+- [DALL·E 2 - OpenAI](https://openai.com/product/dall-e-2)
 ## Introduction
 #### What is Image Search and how will we use it?
 One may find themselves with an image, looking for similar images among a large image corpus. The difficult part of this requirement is instantly retrieving, at scale, similar images, especially when there are tens of millions or billions of images from which to choose.
